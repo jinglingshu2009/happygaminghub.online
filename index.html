@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetris</title>
+    <link rel="stylesheet" href="puzzle.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>Tetris</h1>
+            <p class="game-hint">Shortcuts: Start(S) Pause(P) Continue(C) Reset(R) End(E)</p>
+        </div>
+        
+        <div class="game-main">
+            <div class="game-canvas-area">
+                <!-- 级别选择器 -->
+                <div class="level-selector">
+                    <label for="level">Game Level:</label>
+                    <select id="level">
+                        <option value="1">1 - Easy</option>
+                        <option value="2">2 - Beginner</option>
+                        <option value="3" selected>3 - Intermediate</option>
+                        <option value="4">4 - Advanced</option>
+                        <option value="5">5 - Hard</option>
+                        <option value="6">6 - Expert</option>
+                    </select>
+                </div>
+                
+                <!-- 游戏主画布 -->
+                <canvas id="game-canvas"></canvas>
+                
+                <!-- 控制按钮 -->
+                <div class="control-panel">
+                    <button id="start-btn" class="control-btn">Start Game (S)</button>
+                    <button id="pause-btn" class="control-btn">Pause (P)</button>
+                    <button id="reset-btn" class="control-btn">Restart (R)</button>
+                </div>
+                
+                <!-- 移动控制按钮 -->
+                <div class="mobile-controls">
+                    <button id="move-left" class="mobile-btn">←</button>
+                    <button id="move-down" class="mobile-btn">↓</button>
+                    <button id="move-right" class="mobile-btn">→</button>
+                    <button id="rotate-btn" class="mobile-btn">Rotate</button>
+                </div>
+            </div>
+            
+            <!-- 游戏信息区域 -->
+            <div class="game-info-area">
+                <div class="game-stats">
+                    <h3>Game Info</h3>
+                    <p>Score: <span id="score">0</span></p>
+                    <p>Lines: <span id="lines">0</span></p>
+                    <p>Level: <span id="current-level">3</span></p>
+                    <p>Next Piece:</p>
+                    <canvas id="next-piece"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="puzzle.js"></script>
+</body>
+</html>
